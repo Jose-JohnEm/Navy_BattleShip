@@ -5,9 +5,11 @@
 ## infinadd
 ##
 
-MAIN     =	main.c			\
+MAIN     =	main.c						\
 
-SRC		=	$(MAIN)
+ERROR	=	src/Error/error.c			\
+			src/Error/verif_players.c	\
+			src/Error/check_map.c		\
 
 CC		=	gcc -I./include -W -Wall -Wextra -g
 
@@ -15,7 +17,7 @@ NAME	=	navy
 
 all:
 	cd lib/my && make
-	$(CC) $(MAIN) -o $(NAME) -L. -lmy
+	$(CC) $(MAIN) $(ERROR) -o $(NAME) -L. -lmy
 
 clean:
 	rm -f $(OBJ)
