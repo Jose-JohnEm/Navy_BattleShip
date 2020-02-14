@@ -10,6 +10,7 @@ MAIN     =	main.c						\
 ERROR	=	src/Error/error.c			\
 			src/Error/verif_players.c	\
 			src/Error/check_map.c		\
+			src/Error/ship_matcher.c	\
 
 CC		=	gcc -I./include -W -Wall -Wextra -g
 

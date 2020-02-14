@@ -13,12 +13,18 @@ int verif_player1(char **av)
 
     if (fd == -1)
         return (84);
-    if (demand_map(fd) == 1)
-        return (1);
-    return (84);
+    if (demand_map(fd) == -1)
+        return (84);
+    return (1);
 }
 
 int verif_player2(char **av)
 {
+    int fd = open(av[2], O_RDONLY);
+
+    if (my_str_isnum(av[1]) == 0)
+        return (84);
+    if (fd == -1)
+        return (84);
     return (2);
 }
