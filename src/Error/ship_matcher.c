@@ -17,36 +17,13 @@ int do_not_cross(char **map)
             i++;
             j = 0;
         }
-        else if ((tmp = map[i][j]) == '2' || tmp == '3' || tmp == '4' || tmp == '5')
+        else if ((tmp = map[i][j]) == '2' || tmp == '3' || tmp == '4'
+            || tmp == '5')
             ok[tmp - '0' - 2]++;
     }
     if (ok[0] == 2 || ok[0] == 3 || ok[0] == 4 || ok[0] == 5)
         return (1);
     return (-1);
-}
-
-char **set_map_test_width(char **map, int diff, int x, int y)
-{
-    //my_putstr("ICI\n");
-    x -= 'A';
-    y -= '0' + 1;
-    for (int i = 0; i <= diff; i++) {
-        map[y][x + i] = diff + 1 + '0';
-    }
-    //my_putab(map);
-    return (map);
-}
-
-char **set_map_test_length(char **map, int diff, int x, int y)
-{
-    //my_putstr("Par la\n");
-    x -= 'A';
-    y -= '0' + 1;
-    for (int i = 0; i <= diff; i++) {
-        map[y + i][x] = diff + 1 + '0';
-    }
-    //my_putab(map);
-    return (map);
 }
 
 char **insert_ship(char **map, char *position)
@@ -61,7 +38,7 @@ char **insert_ship(char **map, char *position)
     return (map);
 }
 
-char **init_map_test()
+char **init_map_test(void)
 {
     char **map = malloc(sizeof(char *) * 9);
 
@@ -82,8 +59,6 @@ int does_it_match(char **tab)
     for (int i = 0; i < 4; i++) {
         map = insert_ship(map, tab[i]);
     }
-    my_putstr("ABCDEFGH\n");
-    my_putab(map);
     if (do_not_cross(map) == -1)
         return (-1);
     return (1);
