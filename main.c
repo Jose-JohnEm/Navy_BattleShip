@@ -9,9 +9,15 @@
 
 int main(int ac, char **av)
 {
-    int err_value;
+    int value = 0;
 
-    if ((err_value = error(ac, av)) == 84 || err_value == 0)
-        return (err_value);
+    if ((value = error(ac, av)) == 84 || value == 0)
+        return (value);
+    if (value == 1)
+        value = pid_connection(value, 0);
+    if (value == 2)
+        pid_connection(value, my_getnbr(av[1]));
+    if (value == 84)
+        return (value);
     return (0);
 }

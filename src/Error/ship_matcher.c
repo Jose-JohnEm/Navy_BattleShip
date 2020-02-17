@@ -61,5 +61,7 @@ int does_it_match(char **tab)
     }
     if (do_not_cross(map) == -1)
         return (-1);
+    //my_putstr("ABCDEFGH\n");
+    //my_putab(map);
     return (1);
 }

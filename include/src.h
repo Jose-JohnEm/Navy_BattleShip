@@ -29,6 +29,7 @@
 #define SRC_H
 
 #include "src/error.h"
+#include "src/connection.h"
 
 #endif
 
