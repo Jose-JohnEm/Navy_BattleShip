@@ -15,6 +15,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <signal.h>
 
 /*------ LIBMY -------*/
 #ifndef MY_H
@@ -30,6 +31,7 @@
 
 #include "src/error.h"
 #include "src/connection.h"
+#include "src/game.h"
 
 #endif
 

@@ -16,8 +16,9 @@ int main(int ac, char **av)
     if (value == 1)
         value = pid_connection(value, 0);
     if (value == 2)
-        pid_connection(value, my_getnbr(av[1]));
+        value = pid_connection(value, my_getnbr(av[1]));
     if (value == 84)
         return (value);
+    navy_game(my_getnbr(av[value]));
     return (0);
 }

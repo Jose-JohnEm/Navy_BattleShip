@@ -8,6 +8,9 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
+//#define SIGUSER1 50
+//#define SIGUSER2 51
+
 /*--------- pid_connection.c ----------*/
 int pid_connection(int player, int pid);
 

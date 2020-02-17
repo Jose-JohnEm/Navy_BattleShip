@@ -15,13 +15,15 @@ ERROR		=	src/Error/error.c					\
 
 CONNECTION	=	src/Connection/pid_connection.c		\
 
+GAME		=	src/Game/launch_game.c				\
+
 CC		=	gcc -I./include -W -Wall -Wextra -g
 
 NAME	=	navy
 
 all:
 	cd lib/my && make
-	$(CC) $(MAIN) $(ERROR) $(CONNECTION) -o $(NAME) -L. -lmy
+	$(CC) $(MAIN) $(ERROR) $(CONNECTION) $(GAME) -o $(NAME) -L. -lmy
 
 clean:
 	rm -f $(OBJ)

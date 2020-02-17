@@ -7,6 +7,14 @@
 
 #include "src.h"
 
+char *avclean(char *str)
+{
+    for (int i = 0; str[i] != '\0'; i++)
+        if (str[i] < 32 || str[i] > 126)
+            str[i] = '\0';
+    return (str);
+}
+
 int verif_player1(char **av)
 {
     int fd = open(av[1], O_RDONLY);
@@ -15,7 +23,6 @@ int verif_player1(char **av)
         return (84);
     if (demand_map(fd) == -1)
         return (84);
-    my_putstr("\nNON!!\n");
     return (1);
 }
 
@@ -23,6 +30,7 @@ int verif_player2(char **av)
 {
     int fd = open(av[2], O_RDONLY);
 
+    my_put_nbr(my_strlen(av[1]));
     if (my_str_isnum(av[1]) == 0)
         return (84);
     if (fd == -1)

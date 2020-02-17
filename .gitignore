@@ -2,6 +2,7 @@
 *.a
 navy
 test
+tests/
 map
 *~
 '#*#'
