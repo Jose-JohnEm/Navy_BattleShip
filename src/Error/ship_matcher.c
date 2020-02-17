@@ -21,7 +21,7 @@ int do_not_cross(char **map)
             || tmp == '5')
             ok[tmp - '0' - 2]++;
     }
-    if (ok[0] == 2 || ok[0] == 3 || ok[0] == 4 || ok[0] == 5)
+    if (ok[0] == 2 && ok[1] == 3 && ok[2] == 4 && ok[3] == 5)
         return (1);
     return (-1);
 }
@@ -61,7 +61,7 @@ int does_it_match(char **tab)
     }
     if (do_not_cross(map) == -1)
         return (-1);
-    //my_putstr("ABCDEFGH\n");
-    //my_putab(map);
+    my_putstr("ABCDEFGH\n");
+    my_putab(map);
     return (1);
 }
