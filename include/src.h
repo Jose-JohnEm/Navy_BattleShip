@@ -5,6 +5,12 @@
 ** src.h
 */
 
+#ifndef OPPO_PID
+#define OPPO_PID
+
+int opponent_pid;
+
+#endif
 
 #ifndef ALL_H
 #define ALL_H
@@ -26,12 +32,14 @@
 #endif
 
 /*------ SRC -------*/
+
 #ifndef SRC_H
 #define SRC_H
 
+
 #include "src/error.h"
-#include "src/connection.h"
 #include "src/game.h"
+#include "src/connection.h"
 
 #endif
 

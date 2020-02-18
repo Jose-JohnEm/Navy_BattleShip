@@ -10,6 +10,6 @@
 typedef struct g_data
 {
     char **player_map;
-    char **enemy_map;
-    __pid_t pid;
+    __pid_t my_pid;
+    __pid_t opponent_pid;
 } g_data;

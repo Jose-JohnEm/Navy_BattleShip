@@ -56,12 +56,12 @@ int is_the_map_correct(char *str)
 int demand_map(int fd)
 {
     char str[40];
+    int rd = read(fd, str, 40);
 
-    read(fd, str, 40);
-    if (my_strlen(str) != 32 && my_strlen(str) != 31)
+    if (rd != 32 && rd != 31)
         return (-1);
-    if (str[MAX_TO_READ] == '\n')
-        str[MAX_TO_READ] = '\0';
+    if (rd == 32 && str[MAX_TO_READ - 1] == '\n')
+        str[MAX_TO_READ - 1] = '\0';
     if (is_the_map_correct(str) == -1)
         return (-1);
     str[MAX_TO_READ] = '\0';

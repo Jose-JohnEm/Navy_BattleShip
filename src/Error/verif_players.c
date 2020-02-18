@@ -23,6 +23,7 @@ int verif_player1(char **av)
         return (84);
     if (demand_map(fd) == -1)
         return (84);
+    close(fd);
     return (1);
 }
 
@@ -30,12 +31,12 @@ int verif_player2(char **av)
 {
     int fd = open(av[2], O_RDONLY);
 
-    my_put_nbr(my_strlen(av[1]));
     if (my_str_isnum(av[1]) == 0)
         return (84);
     if (fd == -1)
         return (84);
     if (demand_map(fd) == -1)
         return (84);
+    close(fd);
     return (2);
 }

@@ -12,6 +12,6 @@
 //#define SIGUSER2 51
 
 /*--------- pid_connection.c ----------*/
-int pid_connection(int player, int pid);
+g_data *pid_connection(int player, int pid);
 
 #endif

@@ -15,6 +15,6 @@
 
 #endif
 
-int navy_game(int fd);
+int navy_game(int fd, g_data *game_data);
 
 #endif
