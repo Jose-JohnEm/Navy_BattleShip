@@ -7,6 +7,17 @@
 
 #include "src.h"
 
+int is_format_correct(char *str)
+{
+    if (str[0] < 'A' || str[0] > 'H')
+        return -1;
+    if (str[1] < '1' || str[1] > '8')
+        return -1;
+    if (str[2] != '\0')
+        return -1;
+    return 0;
+}
+
 int check_case(g_data *data)
 {
     int i = 0;
@@ -26,7 +37,5 @@ void gameplay(g_data *data)
         if (position_is_wrong == -1)
             my_putstr("wrong position\n");
     } while (check_case(data) == -1);
-
-        
     
 }
