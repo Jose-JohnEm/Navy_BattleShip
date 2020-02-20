@@ -15,6 +15,14 @@
 
 #endif
 
+/*----------- navy_game.c -----------*/
 int navy_game(int fd, g_data *game_data);
+char **create_map(int fd);
+char **init_map_final(void);
+char **insert_ships_final(char **final_tab, char **positions);
+void print_game_situation(g_data *game_data);
+
+/*----------- input_game.c -----------*/
+
 
 #endif

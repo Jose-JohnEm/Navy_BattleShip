@@ -7,6 +7,13 @@
 
 #include "src.h"
 
+int position_is_wrong(char *str, char **map)
+{
+    if (map[str[0] - '1'][str[1] - 'A'] == '.')
+        return (1);
+    return (0);
+}
+
 int is_format_correct(char *str)
 {
     if (str[0] < 'A' || str[0] > 'H')
@@ -27,15 +34,17 @@ int check_case(g_data *data)
         return -1;
     if (is_format_correct(str) == -1)
         return -1;
-    //repeate_case():
+    return (position_is_wrong(str, data->attack_map));
 }
 
 void gameplay(g_data *data)
 {
+    int err = 0;
+
     do {
         my_putstr("\nattack: ");
-        if (position_is_wrong == -1)
+        err = check_case(data);
+        if (err == -1)
             my_putstr("wrong position\n");
-    } while (check_case(data) == -1);
-    
+    } while (err == -1);
 }

@@ -16,10 +16,11 @@ ERROR		=	src/Error/error.c					\
 CONNECTION	=	src/Connection/pid_connection.c		\
 
 GAME		=	src/Game/launch_game.c				\
+				src/Game/gameplay.c					\
 
-CC		=	gcc -I./include -W -Wall -Wextra -g
+CC			=	gcc -I./include -W -Wall -Wextra -g
 
-NAME	=	navy
+NAME		=	navy
 
 all:
 	cd lib/my && make
