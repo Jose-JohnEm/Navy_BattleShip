@@ -53,5 +53,6 @@ int navy_game(int fd, g_data *game_data)
     game_data->player_map = create_map(fd);
     game_data->attack_map = create_map(-10);
     print_game_situation(game_data);
+    gameplay(game_data);
     return (0);
 }

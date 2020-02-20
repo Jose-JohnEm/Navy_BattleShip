@@ -21,12 +21,10 @@ int is_format_correct(char *str)
 char *check_case(g_data *data)
 {
     int i = 0;
-    char *str = malloc(sizeof(char) * 100);
+    char *str = malloc(100);
 
-    my_put_nbr(atoi(str[2]));
-    if ((i = read(0, str, 3)) == -1 || i != 2)
+    if ((i = read(0, str, 3)) == -1 || i != 3)
         return NULL;
-        printf("OKKKKKKKKKKKKKKKKKK\n");
     if (is_format_correct(str) == -1)
         return NULL;
     //repeate_case();
@@ -44,4 +42,5 @@ void gameplay(g_data *data)
             my_putstr("wrong position\n");
     } while (attack == NULL);
     my_putstr(attack);
+
 }
