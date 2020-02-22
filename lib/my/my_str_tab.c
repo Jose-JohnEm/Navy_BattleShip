@@ -37,12 +37,12 @@ char **my_str_tab(char *str)
 
     while (str != NULL && str[y]) {
         if (is_alnum(str[y]))
-	        len = len + 1;
+            len = len + 1;
         if (is_alnum(str[y]) == 1 && is_alnum(str[y + 1]) == 0) {
-	        wordtab[x] = malloc(len + 1);
+            wordtab[x] = malloc(len + 1);
             wordtab[x][len] = '\0';
     	    my_strncpy(wordtab[x], &str[y - len + 1], len);
-	        len = 0;
+            len = 0;
 	        x = x + 1;
 	    }
         y = y + 1;
