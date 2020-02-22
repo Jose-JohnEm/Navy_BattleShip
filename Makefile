@@ -5,24 +5,24 @@
 ## infinadd
 ##
 
-MAIN     	=	main.c								\
+MAIN     	=	main.c							\
 
 ERROR		=	src/Error/error.c					\
-				src/Error/verif_players.c			\
-				src/Error/check_map.c				\
-				src/Error/ship_matcher.c			\
-				src/Error/set_map_test.c			\
+			src/Error/verif_players.c				\
+			src/Error/check_map.c					\
+			src/Error/ship_matcher.c				\
+			src/Error/set_map_test.c				\
 
-CONNECTION	=	src/Connection/pid_connection.c		\
+CONNECTION	=	src/Connection/pid_connection.c				\
 
-GAME		=	src/Game/launch_game.c				\
-				src/Game/gameplay.c					\
-				src/Game/send.c						\
-				src/Game/receive.c					\
+GAME		=	src/Game/launch_game.c					\
+			src/Game/gameplay.c					\
+			src/Game/send.c						\
+			src/Game/receive.c					\
 
 ADDS		=	src/Adds/adds.c						\
 
-CC			=	gcc -I./include -W -Wall -Wextra -g
+CC		=	gcc -I./include -W -Wall -Wextra -g
 
 NAME		=	navy
 
