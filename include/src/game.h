@@ -22,7 +22,25 @@ char **init_map_final(void);
 char **insert_ships_final(char **final_tab, char **positions);
 void print_game_situation(g_data *game_data);
 
-/*----------- input_game.c -----------*/
+/*----------- gameplay.c -----------*/
+int gameplay(g_data *data);
+char *check_case(g_data *data);
+int is_format_correct(char *str);
+char *position_is_wrong(char *str, char **map);
+int waiting(g_data *data);
+
+/*----------- send.c -----------*/
+void can_i_attack(g_data *game_data, char *ans);
+int converted_message(char *ans);
+void missed(int signum);
+void hit(int signum);
+
+
+/*----------- receive.c -----------*/
+void receive(g_data *game_data);
+void reset(int sig);
+void increase(int sig);
+char *demand(int nb);
 
 
 #endif

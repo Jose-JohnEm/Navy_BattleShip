@@ -7,11 +7,11 @@
 
 #include "src.h"
 
-int position_is_wrong(char *str, char **map)
+char *position_is_wrong(char *str, char **map)
 {
-    if (map[str[0] - '1'][str[1] - 'A'] == '.')
-        return (1);
-    return (0);
+    if (map[str[1] - '1'][str[0] - 'A'] == '.')
+        return (str);
+    return (NULL);
 }
 
 int is_format_correct(char *str)
@@ -25,26 +25,36 @@ int is_format_correct(char *str)
     return 0;
 }
 
-int check_case(g_data *data)
+char *check_case(g_data *data)
 {
     int i = 0;
-    char *str = malloc(100);
+    char *str = malloc(sizeof(char) * 100);
 
-    if ((i = read(0, str, 3)) == -1 || i != 3)
-        return -1;
+    if ((i = read(0, str, 100)) == -1 || i != 3)
+        return NULL;
+    str[i - 1] = '\0';
     if (is_format_correct(str) == -1)
-        return -1;
+        return NULL;
     return (position_is_wrong(str, data->attack_map));
 }
 
-void gameplay(g_data *data)
+int waiting(g_data *data)
 {
-    int err = 0;
+    my_putstr("\nwaiting for enemy's attack...\n");
+    receive(data);
+    return (1);
+}
+
+int gameplay(g_data *data)
+{
+    char *ans;
 
     do {
         my_putstr("\nattack: ");
-        err = check_case(data);
-        if (err == -1)
-            my_putstr("wrong position\n");
-    } while (err == -1);
+        ans = check_case(data);
+        if (ans == NULL)
+            my_putstr("wrong position");
+    } while (ans == NULL);
+    can_i_attack(data, ans);
+    return (2);
 }

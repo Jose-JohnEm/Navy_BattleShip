@@ -40,6 +40,7 @@ int opponent_pid;
 #include "src/error.h"
 #include "src/game.h"
 #include "src/connection.h"
+#include "src/adds.h"
 
 #endif
 

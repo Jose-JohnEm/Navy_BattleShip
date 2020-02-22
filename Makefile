@@ -17,6 +17,10 @@ CONNECTION	=	src/Connection/pid_connection.c		\
 
 GAME		=	src/Game/launch_game.c				\
 				src/Game/gameplay.c					\
+				src/Game/send.c						\
+				src/Game/receive.c					\
+
+ADDS		=	src/Adds/adds.c						\
 
 CC			=	gcc -I./include -W -Wall -Wextra -g
 
@@ -24,7 +28,7 @@ NAME		=	navy
 
 all:
 	cd lib/my && make
-	$(CC) $(MAIN) $(ERROR) $(CONNECTION) $(GAME) -o $(NAME) -L. -lmy
+	$(CC) $(MAIN) $(ERROR) $(CONNECTION) $(GAME) $(ADDS) -o $(NAME) -L. -lmy
 
 clean:
 	rm -f $(OBJ)

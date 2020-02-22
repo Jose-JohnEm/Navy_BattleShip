@@ -56,6 +56,7 @@ g_data *pid_connection(int player, int pid)
         connection_first_player();
     if (player == 2)
         connection_second_player(pid);
+    game_data->num_player = player;
     game_data->my_pid = getpid();
     game_data->opponent_pid = opponent_pid;
     game_data->player_map = NULL;

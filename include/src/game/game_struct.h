@@ -13,4 +13,5 @@ typedef struct g_data
     __pid_t my_pid;
     __pid_t opponent_pid;
     char **attack_map;
+    int num_player;
 } g_data;

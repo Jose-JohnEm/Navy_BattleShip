@@ -21,7 +21,7 @@ int do_not_cross(char **map)
             || tmp == '5')
             ok[tmp - '0' - 2]++;
     }
-    printf("2 = %d\n3 = %d\n4 = %d\n5 = %d\n", ok[0], ok[1], ok[2], ok[3]);
+    //printf("2 = %d\n3 = %d\n4 = %d\n5 = %d\n", ok[0], ok[1], ok[2], ok[3]);
     if (ok[0] == 2 && ok[1] == 3 && ok[2] == 4 && ok[3] == 5)
         return (1);
     return (-1);
@@ -60,8 +60,8 @@ int does_it_match(char **tab)
     for (int i = 0; i < 4; i++) {
         map = insert_ship(map, tab[i]);
     }
-    my_putstr("ABCDEFGH\n");
-    my_putab(map);
+    //my_putstr("ABCDEFGH\n");
+    //my_putab(map);
     if (do_not_cross(map) == -1)
         return (-1);
     return (1);
