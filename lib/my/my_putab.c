@@ -6,7 +6,9 @@
 */
 
 char *my_putstr(char *str);
+
 void my_putchar(char c);
+
 int my_put_nbr(int nb);
 
 void my_putab(char **tab)

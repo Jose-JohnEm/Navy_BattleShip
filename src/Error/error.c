@@ -7,6 +7,15 @@
 
 #include "src.h"
 
+int verif_cara_suite(int cara, char current)
+{
+    if ((cara == 4 || cara == 7) && (current < '1' || current > '8'))
+        return (0);
+    if (cara == 8 && current != '\n')
+        return (0);
+    return (1);
+}
+
 int help(void)
 {
     my_putstr("USAGE\n     ./navy [first_player_pid] navy_positions\nDESCRIPT");

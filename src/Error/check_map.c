@@ -30,10 +30,8 @@ int verif_cara(int cara, int line, char current)
         return (0);
     if ((cara == 3 || cara == 6) && (current < 'A' || current > 'H'))
         return (0);
-    if ((cara == 4 || cara == 7) && (current < '1' || current > '8'))
-        return (0);
-    if (cara == 8 && current != '\n')
-        return (0);
+    if (verif_cara_suite(cara, current) == 0)
+        return 0;
     return (1);
 }
 

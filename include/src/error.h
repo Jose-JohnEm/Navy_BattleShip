@@ -22,6 +22,7 @@ int verif_player2(char **av);
 int is_the_map_correct(char *str);
 int demand_map(int fd);
 int verif_cara(int cara, int line, char current);
+int verif_cara_suite(int cara, char current);
 int verif_positions(char **tab);
 
 /*--------- ship_matcher.c ----------*/

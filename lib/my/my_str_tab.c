@@ -6,6 +6,7 @@
 */
 
 #include <stdlib.h>
+
 char my_strncpy(char *dest, char const *src, int n);
 
 int is_alnum(char c)
@@ -43,8 +44,8 @@ char **my_str_tab(char *str)
             wordtab[x][len] = '\0';
     	    my_strncpy(wordtab[x], &str[y - len + 1], len);
             len = 0;
-	        x = x + 1;
-	    }
+            x = x + 1;
+        }
         y = y + 1;
     }
     wordtab[x] = NULL;

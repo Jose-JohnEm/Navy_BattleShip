@@ -21,7 +21,7 @@ void succ_play2(int sig)
     (void)sig;
 }
 
-int connection_first_player()
+int connection_first_player(void)
 {
     struct sigaction act;
 
