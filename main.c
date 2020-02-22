@@ -21,6 +21,5 @@ int main(int ac, char **av)
         game_data = pid_connection(value, my_getnbr(av[1]));
     if (game_data == NULL)
         return (84);
-    navy_game(open(av[value], O_RDONLY), game_data);
-    return (0);
+    return (navy_game(open(av[value], O_RDONLY), game_data));
 }

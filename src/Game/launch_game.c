@@ -57,7 +57,7 @@ int navy_game(int fd, g_data *game_data)
     game_data->player_map = create_map(fd);
     game_data->attack_map = create_map(-10);
     print_game_situation(game_data);
-    for (int aff = 1; 1; aff++) {
+    for (int aff = 1; there_is_a_ship(game_data) == 1; aff++) {
         if (turn == 1)
             turn = gameplay(game_data);
         else
@@ -67,6 +67,7 @@ int navy_game(int fd, g_data *game_data)
             print_game_situation(game_data);
         }
     }
+    who_loose(turn);
     (void)aff;
-    return (0);
+    return (2 - turn);
 }
