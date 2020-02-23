@@ -27,6 +27,8 @@ int help(void)
 
 int error(int ac, char **av)
 {
+    if (av == NULL)
+        return (84);
     if (ac == 2 && my_strcmp("-h", av[1]))
         return (help());
     else if (ac != 2 && ac != 3)

@@ -27,16 +27,21 @@ CC			=	gcc -I./include -W -Wall -Wextra -g
 NAME		=	navy
 
 all:
-	cd lib/my && make
+	make -C lib/my
 	$(CC) $(MAIN) $(ERROR) $(CONNECTION) $(GAME) $(ADDS) -o $(NAME) -L. -lmy
 
 clean:
 	rm -f $(OBJ)
-	cd lib/my && make clean
+	make -C lib/my clean
 
 fclean: clean
-	cd lib/my && make fclean
+	make -C lib/my fclean
 	rm -f $(NAME)
 	rm -f $(BRUH)
 
 re:     fclean all
+
+tests_run:
+	make -C lib/my
+	gcc -o Units_Test -I./include Units/units_test.c --coverage -lcriterion -lmy -L.
+	./Units_Test
