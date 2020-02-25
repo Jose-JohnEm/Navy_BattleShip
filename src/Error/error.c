@@ -29,7 +29,7 @@ int error(int ac, char **av)
 {
     if (av == NULL)
         return (84);
-    if (ac == 2 && my_strcmp("-h", av[1]))
+    if (ac == 2 && av[1] != NULL && my_strcmp("-h", av[1]))
         return (help());
     else if (ac != 2 && ac != 3)
         return (84);

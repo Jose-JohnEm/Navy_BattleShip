@@ -26,6 +26,12 @@ CC			=	gcc -I./include -W -Wall -Wextra -g
 
 NAME		=	navy
 
+UNITS		=	Units_Test
+
+UNIT_FILE	=	Units/units_test.c
+
+CRITERION	=	--coverage -lcriterion
+
 all:
 	make -C lib/my
 	$(CC) $(MAIN) $(ERROR) $(CONNECTION) $(GAME) $(ADDS) -o $(NAME) -L. -lmy
@@ -43,5 +49,16 @@ re:     fclean all
 
 tests_run:
 	make -C lib/my
-	gcc -o Units_Test -I./include Units/units_test.c --coverage -lcriterion -lmy -L.
-	./Units_Test
+	gcc -o $(UNITS) $(UNIT_FILE) $(ERROR) $(ADDS) $(CRITERION) -I./include -lmy -L.
+	./$(UNITS)
+
+t:	tests_run
+
+t_clean:
+	rm *.gc*
+	rm $(UNITS)
+
+rt: t_clean t
+
+g:
+	gcovr --exclude $(UNIT_FILE)
