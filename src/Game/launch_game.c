@@ -7,12 +7,13 @@
 
 #include "src.h"
 
-void print_game_situation(g_data *game_data)
+int print_game_situation(g_data *game_data)
 {
     my_putstr("\nmy positions:\n");
     my_put_map(game_data->player_map);
     my_putstr("\nenemy's positions:\n");
     my_put_map(game_data->attack_map);
+    return (1);
 }
 
 char **insert_ships_final(char **final_tab, char **positions)

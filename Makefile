@@ -49,12 +49,12 @@ re:     fclean all
 
 tests_run:
 	make -C lib/my
-	gcc -o $(UNITS) $(UNIT_FILE) $(ERROR) $(ADDS) $(CRITERION) -I./include -lmy -L.
+	gcc -o $(UNITS) $(UNIT_FILE) $(ERROR) $(GAME) $(ADDS) $(CRITERION) -I./include -lmy -L.
 	./$(UNITS)
 
 t:	tests_run
 
-t_clean:
+t_clean:	fclean
 	rm *.gc*
 	rm $(UNITS)
 

@@ -136,8 +136,12 @@ Test(map, file_with_matching_ships) {
     cr_assert_eq(demand_map(fd), -1);
 }
 
-TestSuite(connection);
+TestSuite(game);
 
-Test(connection, sucess) {
-    
+Test(game, print_game_actual_situation) {
+    g_data data;
+
+    data.attack_map = create_map(open("Map/m1", O_RDONLY));
+    data.player_map = create_map(-10);
+    cr_expect_eq(print_game_situation(&data), 1);
 }
