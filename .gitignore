@@ -1,0 +1,10 @@
+*.o
+*.a
+navy
+map
+*~
+'#*#'
+'.*#'
+correct_map
+wrong_map
+Map/
